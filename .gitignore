@@ -1,2 +1,5 @@
 data/interim/clean_data.csv
 data/processed/data_full.csv
+data/interim/data.csv
+src/preprocessing/__pycache__/clean.cpython-314.pyc
+src/features/__pycache__/rest_days.cpython-314.pyc

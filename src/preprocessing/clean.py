@@ -1,10 +1,19 @@
 import pandas as pd
 
-def main():
+
+def run_clean():
+    
     df = pd.read_csv(r"data\raw\campeonato-brasileiro-full.csv", sep=";")
+
     df = clean(df)
+    
     df = features(df)
-    df.to_csv("data/processed/data_full.csv")
+    
+    # df.to_csv("data/interim/data_cleaned.csv")
+    
+    return df
+
+    
 
 def clean(df):
 
@@ -16,8 +25,6 @@ def clean(df):
 
     df = df.sort_values("data")
 
-    df.to_csv("data/interim/clean_data.csv")
-
     return df
 
 
@@ -26,7 +33,7 @@ def features(df):
     df["elo_away"] = 0.0
     df["elo_diff"] = 0.0
     df["home_points_last5"] = 0
-    df["away_points_last5"] = 0
+    df["away_points_last5"] = 0 
     df["home_wins_last5"] = 0
     df["away_wins_last5"] = 0
     df["home_goals_scored_last5"] = 0
@@ -38,8 +45,6 @@ def features(df):
     df["points_diff_last5"] = df["home_points_last5"] - df["away_goals_scored_last5"]
     df["goal_diff_diff"] = df["home_goals_scored_last5"] - df["away_goals_scored_last5"]
     df["season"] = df["data"].dt.year
+    df["month"] = df["data"].dt.month
     
     return df
-    
-
-main()
