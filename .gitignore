@@ -4,3 +4,12 @@ data/interim/data.csv
 src/preprocessing/__pycache__/clean.cpython-314.pyc
 src/features/__pycache__/rest_days.cpython-314.pyc
 src/features/__pycache__/elo.cpython-314.pyc
+catboost_info/catboost_training.json
+catboost_info/learn_error.tsv
+catboost_info/test_error.tsv
+catboost_info/time_left.tsv
+catboost_info/learn/events.out.tfevents
+catboost_info/test/events.out.tfevents
+data/processed/data_model.csv
+src/features/__pycache__/last_5.cpython-314.pyc
+src/models/__pycache__/train.cpython-314.pyc
